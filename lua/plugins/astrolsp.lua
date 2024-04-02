@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
 -- Configuration documentation can be found with `:h astrolsp`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -46,6 +44,65 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      pyright = {
+        settings = {
+          python = { analysis = { stubPath = "~/.config/typings", typeCheckingMode = "basic" } },
+          pyright = { disableOrganizeImports = true, disableLanguageServices = false },
+        },
+      },
+      bashls = {
+        settings = {
+          -- SC2317: commands unreachable
+          -- SC2181: check exit code indirectly with $?
+          -- SC2034: variable unused
+          -- SC2164: no return or exit in case cd fails
+          -- SC1090: ShellCheck can't follow non-constant source. Use a directive to specify location.
+          bashIde = { logLevel = "info", shellcheckArguments = "-e SC2317,SC2181,SC1090" },
+        },
+      },
+      lua_ls = {
+        settings = {
+          Lua = {
+            runtime = { version = "LuaJIT" },
+            diagnostics = { globals = { "vim" } },
+            workspace = { library = vim.api.nvim_get_runtime_file("", true) },
+            format = { enable = false },
+          },
+        },
+      },
+      yamlls = {
+        settings = {
+          yaml = {
+            format = { enable = false },
+            schemas = {},
+          },
+        },
+      },
+      jsonls = {
+        settings = {
+          json = {
+            format = { enable = true },
+            schemas = {},
+          },
+        },
+      },
+      clangd = {
+        settings = {
+          clangd = {
+            arguments = {
+              "--clang-tidy",
+              -- "--clang-tidy-checks=performance-*,bugprone-*",
+              -- 全局补全（会自动补充头文件）
+              "--all-scopes-completion",
+              -- 更详细的补全内容
+              "--completion-style=detailed",
+              -- 补充头文件的形式
+              "--header-insertion=iwyu",
+              -- "--background-index",
+            },
+          },
+        },
+      },
     },
     -- customize how language servers are attached
     handlers = {
