@@ -3,25 +3,6 @@
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
 
-local function ui_notify(str)
-  if vim.g.ui_notifications_enabled then require("astrocore").notify(str) end
-end
-
-local function toggle_colorcolumn()
-  local max_length = "80"
-  local colorcolumn = vim.opt.colorcolumn:get()[1]
-  if colorcolumn == nil or colorcolumn == "0" then
-    vim.opt.colorcolumn = max_length
-    colorcolumn = max_length
-  else
-    vim.opt.colorcolumn = ""
-    colorcolumn = "0"
-  end
-  ui_notify(string.format("colorcolumn %s", colorcolumn))
-end
-
-local function show_filepath() ui_notify(string.gsub(vim.api.nvim_buf_get_name(0), "^/home/[^/]+/", "~/", 1)) end
-
 ---@type LazySpec
 return {
   "AstroNvim/astrocore",
@@ -81,26 +62,22 @@ return {
         ["<leader>fM"] = { "<cmd>MarkdownPreview<cr>", desc = "Markdown preview" },
         ["<leader>fL"] = { "<cmd>VimtexCompile<cr>", desc = "Latex compile" },
         ["<leader>fv"] = { "<cmd>VimtexView<cr>", desc = "Latex view" },
+        ["<leader>fs"] = { "<cmd>!nvim_formatter.sh %<cr>", desc = "External formatters" },
 
         ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab page" },
         ["<leader>bq"] = { "<cmd>tabclose<cr>", desc = "Quit tab page" },
 
-        ["<leader>u|"] = { function() toggle_colorcolumn() end, desc = "Toggle colorcolumn" },
+        ["<leader>ue"] = { function() require("utils").toggle_colorcolumn() end, desc = "Toggle colorcolumn" },
 
         ["<leader>gk"] = { "<cmd>!gitk --all &<cr>", desc = "Launch gitk" },
 
-        ["<leader>fs"] = { "<cmd>!nvim_formatter.sh %<cr>", desc = "External formatters" },
-
-        ["<leader>tp"] = {
-          function() require("astrocore").toggle_term_cmd "ipython" end,
-          desc = "ToggleTerm ipython",
-        },
+        ["<leader>tp"] = { function() require("astrocore").toggle_term_cmd "ipython" end, desc = "ToggleTerm ipython" },
         ["<leader>ta"] = { function() require("astrocore").toggle_term_cmd "lua" end, desc = "ToggleTerm lua" },
         ["<leader>tT"] = { "<cmd>!alacritty &<cr>", desc = "Launch Terminal" },
 
         ["H"] = { function() require("astrocore.buffer").nav(-1) end, desc = "Previous buffer" },
         ["L"] = { function() require("astrocore.buffer").nav(1) end, desc = "Next buffer" },
-        ["<leader>fg"] = { function() show_filepath() end, desc = "Show filepath" },
+        ["<leader>fg"] = { function() require("utils").show_filepath() end, desc = "Show filepath" },
         ["<C-s>"] = { "<cmd>wa<cr>", desc = "Write all buffers" },
         ["<C-q>"] = { "<cmd>qa<cr>", desc = "Quit all windows" },
 
