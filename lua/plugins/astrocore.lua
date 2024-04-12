@@ -83,7 +83,7 @@ return {
 
         ["<A-l>"] = { "<cmd>tabnext<cr>", desc = "Next tab page" },
         ["<A-h>"] = { "<cmd>tabprevious<cr>", desc = "Previous tab page" },
-        ["<leader>h"] = { "<cmd>TodoTelescope<cr>", desc = "Todo" },
+        ["<leader>v"] = { "<cmd>TodoTelescope<cr>", desc = "Todo" },
         ["<leader>s"] = { "<cmd>TroubleToggle<cr>", desc = "Toggle trouble" },
         ["<leader>i"] = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "ToggleTerm horizontal" },
       },
