@@ -62,7 +62,7 @@ return {
     -- build = ":call mkdp#util#install()",
   },
   {
-    "ahmedkhalf/project.nvim",
+    "jay-babu/project.nvim",
     config = function()
       require("project_nvim").setup {
         active = true,
@@ -87,5 +87,15 @@ return {
       }
     end,
     event = "VeryLazy",
+  },
+  {
+    "folke/noice.nvim",
+    opts = {
+      lsp = {
+        signature = {
+          enabled = false,
+        },
+      },
+    },
   },
 }
