@@ -1,5 +1,6 @@
 ---@type LazySpec
 return {
+  -- OVERRIDE PRE-INSTALLED PLUGIN SETTINGS:
   {
     "goolord/alpha-nvim",
     opts = function(_, opts)
@@ -17,12 +18,12 @@ return {
       return opts
     end,
   },
-
-  -- PREINSTALLED_PLUGIN_SETTINGS:
-  { "max397574/better-escape.nvim", enabled = false },
   { "folke/which-key.nvim", opts = { window = { padding = { 0, 0, 0, 0 } } } },
 
-  -- NEW_PLUGINS:
+  -- DISABLE PRE-INSTALLED PLUGIN SETTINGS:
+  { "max397574/better-escape.nvim", enabled = false },
+
+  -- ADD NEW PLUGINS:
   {
     "ahmedkhalf/project.nvim",
     config = function()
@@ -64,7 +65,6 @@ return {
       vim.opt.conceallevel = 2
     end,
   },
-  -- { "phaazon/hop.nvim", branch = "v2", config = function() require "configs.hop" end },
   {
     "iamcco/markdown-preview.nvim",
     ft = "markdown",
@@ -97,18 +97,15 @@ return {
   },
   {
     "folke/flash.nvim",
-    -- event = "VeryLazy",
     event = "User AstroFile",
     opts = {},
-      -- stylua: ignore
-      keys = {
-        { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-        { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-        { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-        { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-        { "<c-a>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
-
-      },
+    keys = {
+      { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+      { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+      { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
+      { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+      { "<c-a>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+    },
   },
   {
     "folke/noice.nvim",
@@ -143,33 +140,4 @@ return {
       "rcarriga/nvim-notify",
     },
   },
-  {
-    "folke/todo-comments.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    opts = {},
-    event = "User AstroFile",
-  },
-  {
-    "folke/trouble.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = {},
-    event = "User AstroFile",
-  },
-  {
-    "stevearc/oil.nvim",
-    opts = {},
-    -- Optional dependencies
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    event = "VeryLazy",
-  },
-  -- {
-  --   "eddyekofo94/gruvbox-flat.nvim",
-  --   priority = 1000,
-  --   enabled = true,
-  --   config = function()
-  --     vim.cmd [[colorscheme gruvbox-flat]]
-  --     -- for gruvbox-flat colortheme
-  --     vim.g.gruvbox_flat_style = "hard"
-  --   end,
-  -- },
 }
