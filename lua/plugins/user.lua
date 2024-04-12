@@ -17,6 +17,7 @@ return {
       }
       return opts
     end,
+    enabled = false,
   },
   { "folke/which-key.nvim", opts = { window = { padding = { 0, 0, 0, 0 } } } },
 
