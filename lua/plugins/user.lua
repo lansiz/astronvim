@@ -27,6 +27,7 @@ return {
   {
     "lervag/vimtex",
     ft = "tex",
+    lazy = true,
     config = function()
       vim.g.tex_flavor = "latex"
       vim.g.vimtex_view_method = "zathura"
@@ -40,31 +41,25 @@ return {
   },
   {
     "iamcco/markdown-preview.nvim",
-    ft = "markdown",
     config = function()
       local g = vim.g
       g.mkdp_page_title = "${name}.md"
       --设置chrome浏览器的路径（或是启动chrome（或其他现代浏览器）的命令）
       --如果设置了该参数,g:mkdp_browserfunc将被忽略
       g.mkdp_browser = "vimb"
-
       --vim回调函数,参数为要打开的url
       --g.mkdp_browserfunc="MKDP_browserfunc_default"
-
       --设置为1可以在打开markdown文件的时候自动打开浏览器预览，只在打开markdown文件的时候打开一次
       g.mkdp_auto_start = 1
-
       --设置为1在编辑markdown的时候检查预览窗口是否已经打开，否则自动打开预览窗口
       g.mkdp_auto_open = 1
-
       --在切换buffer的时候自动关闭预览窗口，设置为0则在切换buffer的时候不自动关闭预览窗口
       g.mkdp_auto_close = 0
-
       --设置为1则只有在保存文件，或退出插入模式的时候更新预览，默认为0，实时更新预览
       g.mkdp_refresh_slow = 0
     end,
     -- run the lua command to install: function() vim.fn["mkdp#util#install"]()
-    build = ":call mkdp#util#install()",
+    -- build = ":call mkdp#util#install()",
   },
   {
     "ahmedkhalf/project.nvim",
