@@ -25,33 +25,6 @@ return {
 
   -- ADD NEW PLUGINS:
   {
-    "ahmedkhalf/project.nvim",
-    config = function()
-      require("project_nvim").setup {
-        active = true,
-        on_config_done = nil,
-        manual_mode = false,
-        detection_methods = { "pattern" },
-        patterns = {
-          ".git",
-          "_darcs",
-          ".hg",
-          ".bzr",
-          ".svn",
-          -- "Makefile",
-          "package.json",
-        },
-        exclude_dirs = {},
-        show_hidden = false,
-        silent_chdir = true,
-        scope_chdir = "global",
-        ignore_lsp = {},
-        datapath = vim.fn.stdpath "data",
-      }
-    end,
-    event = "VeryLazy",
-  },
-  {
     "lervag/vimtex",
     ft = "tex",
     config = function()
@@ -78,15 +51,13 @@ return {
       --vim回调函数,参数为要打开的url
       --g.mkdp_browserfunc="MKDP_browserfunc_default"
 
-      --设置为1可以在打开markdown文件的时候自动打开浏览器预览，只在打开
-      --markdown文件的时候打开一次
+      --设置为1可以在打开markdown文件的时候自动打开浏览器预览，只在打开markdown文件的时候打开一次
       g.mkdp_auto_start = 1
 
       --设置为1在编辑markdown的时候检查预览窗口是否已经打开，否则自动打开预览窗口
       g.mkdp_auto_open = 1
 
-      --在切换buffer的时候自动关闭预览窗口，设置为0则在切换buffer的时候不
-      --自动关闭预览窗口
+      --在切换buffer的时候自动关闭预览窗口，设置为0则在切换buffer的时候不自动关闭预览窗口
       g.mkdp_auto_close = 0
 
       --设置为1则只有在保存文件，或退出插入模式的时候更新预览，默认为0，实时更新预览
@@ -94,50 +65,5 @@ return {
     end,
     -- run the lua command to install: function() vim.fn["mkdp#util#install"]()
     build = ":call mkdp#util#install()",
-  },
-  {
-    "folke/flash.nvim",
-    event = "User AstroFile",
-    opts = {},
-    keys = {
-      { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-      { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-      { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-      { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-      { "<c-a>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
-    },
-  },
-  {
-    "folke/noice.nvim",
-    event = "VeryLazy",
-    opts = {
-      -- add any options here
-      lsp = {
-        -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
-        override = {
-          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-          ["vim.lsp.util.stylize_markdown"] = true,
-          ["cmp.entry.get_documentation"] = true,
-        },
-        hover = {
-          enabled = false,
-        },
-        signature = {
-          enabled = false,
-        },
-      },
-      -- you can enable a preset for easier configuration
-      presets = {
-        bottom_search = true, -- use a classic bottom cmdline for search
-        command_palette = true, -- position the cmdline and popupmenu together
-        long_message_to_split = true, -- long messages will be sent to a split
-        inc_rename = false, -- enables an input dialog for inc-rename.nvim
-        lsp_doc_border = false, -- add a border to hover docs and signature help
-      },
-    },
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
-    },
   },
 }
