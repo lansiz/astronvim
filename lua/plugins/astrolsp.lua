@@ -70,6 +70,15 @@ return {
           },
         },
       },
+      gopls = {
+        settings = {
+          gopls = {
+            analyses = {
+              ST1003 = false,
+            },
+          },
+        },
+      },
       yamlls = {
         settings = {
           yaml = {
