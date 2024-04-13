@@ -1,7 +1,6 @@
 ---@type LazySpec
 return {
   -- OVERRIDE PRE-INSTALLED PLUGIN SETTINGS:
-  { "goolord/alpha-nvim", enabled = false },
   { "folke/which-key.nvim", opts = { window = { padding = { 0, 0, 0, 0 } } } },
   {
     "rcarriga/nvim-notify",
@@ -14,6 +13,7 @@ return {
   },
 
   -- DISABLE PRE-INSTALLED PLUGIN SETTINGS:
+  { "goolord/alpha-nvim", enabled = false },
   { "max397574/better-escape.nvim", enabled = false },
 
   -- ADD NEW PLUGINS:
