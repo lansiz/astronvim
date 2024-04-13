@@ -86,6 +86,8 @@ return {
         ["<leader>T"] = { "<cmd>TodoTelescope<cr>", desc = "Todo" },
         ["<leader>s"] = { "<cmd>TroubleToggle<cr>", desc = "Toggle Trouble" },
         ["<leader>h"] = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "ToggleTerm Horizontal" },
+
+        ["<leader>lT"] = { "<cmd>LspRestart<cr>", desc = "Restart LSP" },
       },
       t = {},
     },
