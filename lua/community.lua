@@ -30,4 +30,5 @@ return {
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.sql" },
   { import = "astrocommunity.pack.typescript" },
+  { import = "astrocommunity.pack.cmake" },
 }
