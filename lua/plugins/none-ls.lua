@@ -16,7 +16,7 @@ return {
       -- },
       -- python
       -- null_ls.builtins.formatting.isort,
-      null_ls.builtins.formatting.black,
+      -- null_ls.builtins.formatting.black,
       -- latex
       -- null_ls.builtins.formatting.latexindent,
       -- json
@@ -24,16 +24,16 @@ return {
       -- null_ls.builtins.formatting.jq,
       -- yaml
       -- null_ls.builtins.diagnostics.yamllint,
-      null_ls.builtins.formatting.yamlfmt,
+      -- null_ls.builtins.formatting.yamlfmt,
       -- bash
-      null_ls.builtins.formatting.shfmt,
+      -- null_ls.builtins.formatting.shfmt,
       -- markdown
-      null_ls.builtins.diagnostics.markdownlint,
-      null_ls.builtins.formatting.markdownlint,
+      -- null_ls.builtins.diagnostics.markdownlint,
+      -- null_ls.builtins.formatting.markdownlint,
       -- lua
-      null_ls.builtins.formatting.stylua,
+      -- null_ls.builtins.formatting.stylua,
       -- go
-      null_ls.builtins.formatting.goimports,
+      -- null_ls.builtins.formatting.goimports,
       -- rust
       -- null_ls.builtins.formatting.rustfmt,
     }
