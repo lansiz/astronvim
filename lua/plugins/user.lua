@@ -1,24 +1,7 @@
 ---@type LazySpec
 return {
   -- OVERRIDE PRE-INSTALLED PLUGIN SETTINGS:
-  {
-    "goolord/alpha-nvim",
-    opts = function(_, opts)
-      opts.section.header.val = {
-        [[ ██▓      ██████ ▒███████▒]],
-        [[▓██▒    ▒██    ▒ ▒ ▒ ▒ ▄▀░]],
-        [[▒██░    ░ ▓██▄   ░ ▒ ▄▀▒ ░]],
-        [[▒██░      ▒   ██▒  ▄▀▒   ░]],
-        [[░██████▒▒██████▒▒▒███████▒]],
-        [[░ ▒░▓  ░▒ ▒▓▒ ▒ ░░▒▒ ▓░▒░▒]],
-        [[░ ░ ▒  ░░ ░▒  ░ ░░░▒ ▒ ░ ▒]],
-        [[  ░ ░   ░  ░  ░  ░ ░ ░ ░ ░]],
-        [[    ░  ░      ░    ░ ░   ░]],
-      }
-      return opts
-    end,
-    enabled = false,
-  },
+  { "goolord/alpha-nvim", enabled = false },
   { "folke/which-key.nvim", opts = { window = { padding = { 0, 0, 0, 0 } } } },
   {
     "rcarriga/nvim-notify",
