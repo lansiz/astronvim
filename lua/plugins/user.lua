@@ -20,6 +20,15 @@ return {
     enabled = false,
   },
   { "folke/which-key.nvim", opts = { window = { padding = { 0, 0, 0, 0 } } } },
+  {
+    "rcarriga/nvim-notify",
+    opts = {
+      fps = 5,
+      render = "compact",
+      stages = "static",
+      top_down = false,
+    },
+  },
 
   -- DISABLE PRE-INSTALLED PLUGIN SETTINGS:
   { "max397574/better-escape.nvim", enabled = false },

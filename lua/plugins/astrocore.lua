@@ -85,7 +85,7 @@ return {
         ["<A-h>"] = { "<cmd>tabprevious<cr>", desc = "Previous tab page" },
         ["<leader>T"] = { "<cmd>TodoTelescope<cr>", desc = "Todo" },
         ["<leader>s"] = { "<cmd>TroubleToggle<cr>", desc = "Toggle Trouble" },
-        ["<leader>h"] = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "ToggleTerm Horizontal" },
+        ["<leader>h"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "ToggleTerm float" },
 
         ["<leader>lT"] = { "<cmd>LspRestart<cr>", desc = "Restart LSP" },
       },
