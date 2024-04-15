@@ -88,6 +88,7 @@ return {
         ["<leader>h"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "ToggleTerm float" },
 
         ["<leader>lT"] = { "<cmd>LspRestart<cr>", desc = "Restart LSP" },
+        ["<leader>D"] = { "<cmd>ErrorLensTelescope<cr>", desc = "Error Lens" },
       },
       t = {},
     },
