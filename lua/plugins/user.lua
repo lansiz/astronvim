@@ -91,4 +91,9 @@ return {
       },
     },
   },
+  {
+    -- 保证isort, black的格式化顺序
+    "stevearc/conform.nvim",
+    optional = false,
+  },
 }
