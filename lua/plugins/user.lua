@@ -2,15 +2,7 @@
 return {
   -- OVERRIDE PRE-INSTALLED PLUGIN SETTINGS:
   { "folke/which-key.nvim", opts = { window = { padding = { 0, 0, 0, 0 } } } },
-  {
-    "rcarriga/nvim-notify",
-    opts = {
-      fps = 5,
-      render = "compact",
-      stages = "static",
-      top_down = false,
-    },
-  },
+  { "rcarriga/nvim-notify", opts = { fps = 5, render = "compact", stages = "static", top_down = false } },
 
   -- DISABLE PRE-INSTALLED PLUGIN SETTINGS:
   { "goolord/alpha-nvim", enabled = false },
@@ -62,15 +54,7 @@ return {
         on_config_done = nil,
         manual_mode = false,
         detection_methods = { "pattern" },
-        patterns = {
-          ".git",
-          "_darcs",
-          ".hg",
-          ".bzr",
-          ".svn",
-          -- "Makefile",
-          "package.json",
-        },
+        patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "package.json" },
         exclude_dirs = {},
         show_hidden = false,
         silent_chdir = true,
@@ -81,14 +65,5 @@ return {
     end,
     event = "VeryLazy",
   },
-  {
-    "folke/noice.nvim",
-    opts = {
-      lsp = {
-        signature = {
-          enabled = false,
-        },
-      },
-    },
-  },
+  { "folke/noice.nvim", opts = { lsp = { signature = { enabled = false } } } },
 }
