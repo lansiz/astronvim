@@ -21,6 +21,7 @@ return {
   { import = "astrocommunity.color.vim-highlighter" },
   -- { import = "astrocommunity.editing-support.nvim-devdocs" },
   { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
+  { import = "astrocommunity.editing-support.suda-vim" },
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.python-ruff" },
