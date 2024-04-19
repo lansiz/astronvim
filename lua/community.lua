@@ -19,6 +19,8 @@ return {
   { import = "astrocommunity.recipes.vscode-icons" },
   { import = "astrocommunity.diagnostics.error-lens-nvim" },
   { import = "astrocommunity.color.vim-highlighter" },
+  -- { import = "astrocommunity.editing-support.nvim-devdocs" },
+  { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.python-ruff" },
