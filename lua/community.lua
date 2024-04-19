@@ -5,8 +5,7 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
-  { import = "astrocommunity.pack.lua" },
-  -- import/override with your plugins folder
+
   { import = "astrocommunity.diagnostics.trouble-nvim" },
   { import = "astrocommunity.diagnostics.error-lens-nvim" },
 
@@ -34,6 +33,7 @@ return {
   { import = "astrocommunity.motion.flash-nvim" },
   { import = "astrocommunity.motion.portal-nvim" },
   { import = "astrocommunity.motion.vim-matchup" },
+
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.python-ruff" },
