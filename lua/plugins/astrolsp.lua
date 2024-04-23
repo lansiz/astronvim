@@ -99,15 +99,15 @@ return {
         settings = {
           clangd = {
             arguments = {
-              "--clang-tidy",
-              -- "--clang-tidy-checks=performance-*,bugprone-*",
-              -- 全局补全（会自动补充头文件）
-              "--all-scopes-completion",
-              -- 更详细的补全内容
-              "--completion-style=detailed",
-              -- 补充头文件的形式
-              "--header-insertion=iwyu",
-              -- "--background-index",
+              -- "--clang-tidy",
+              -- -- "--clang-tidy-checks=performance-*,bugprone-*",
+              -- -- 全局补全（会自动补充头文件）
+              -- "--all-scopes-completion",
+              -- -- 更详细的补全内容
+              -- "--completion-style=detailed",
+              -- -- 补充头文件的形式
+              -- "--header-insertion=iwyu",
+              -- -- "--background-index",
             },
           },
         },
