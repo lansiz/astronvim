@@ -56,7 +56,7 @@ return {
     mappings = {
       n = {
         ["<leader>j"] = { function() require("flash").jump() end, desc = "Jump To" },
-        ["<leader>a"] = { "<cmd>Telescope projects<cr>", desc = "Projects" },
+        ["<leader>v"] = { "<cmd>Telescope projects<cr>", desc = "Projects" },
         ["<leader>r"] = { "<cmd>e!<cr>", desc = "Restore Buffer" },
 
         ["<leader>fM"] = { "<cmd>MarkdownPreview<cr>", desc = "Markdown preview" },
