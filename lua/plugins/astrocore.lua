@@ -89,9 +89,6 @@ return {
 
         ["<leader>lT"] = { "<cmd>LspRestart<cr>", desc = "Restart LSP" },
         ["<leader>D"] = { "<cmd>ErrorLensTelescope<cr>", desc = "Error Lens" },
-
-        ["<leader>o"] = { "<cmd>Portal jumplist backward<cr>", desc = "Jumplist backward" },
-        ["<leader>i"] = { "<cmd>Portal jumplist forward<cr>", desc = "Jumplist forward" },
       },
       t = {},
     },
