@@ -66,18 +66,5 @@ return {
     event = "VeryLazy",
   },
   { "folke/noice.nvim", opts = { lsp = { signature = { enabled = false } } } },
-  {
-    "cbochs/portal.nvim",
-    opts = {
-      window_options = {
-        -- relative = "cursor",
-        -- width = 80,
-        height = 5,
-        -- col = 2,
-        -- focusable = false,
-        -- border = "single",
-        -- noautocmd = true,
-      },
-    },
-  },
+  { "cbochs/portal.nvim", opts = { window_options = { height = 5 } } },
 }
