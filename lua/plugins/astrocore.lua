@@ -55,10 +55,6 @@ return {
     -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
     mappings = {
       n = {
-        ["<leader>j"] = { function() require("flash").jump() end, desc = "Jump To" },
-        ["<leader>v"] = { "<cmd>Telescope projects<cr>", desc = "Projects" },
-        ["<leader>r"] = { "<cmd>e!<cr>", desc = "Restore Buffer" },
-
         ["<leader>fM"] = { "<cmd>MarkdownPreview<cr>", desc = "Markdown preview" },
         ["<leader>fL"] = { "<cmd>VimtexCompile<cr>", desc = "Latex compile" },
         ["<leader>fv"] = { "<cmd>VimtexView<cr>", desc = "Latex view" },
@@ -75,19 +71,23 @@ return {
         ["<leader>ta"] = { function() require("astrocore").toggle_term_cmd "lua" end, desc = "ToggleTerm lua" },
         ["<leader>tT"] = { "<cmd>!alacritty &<cr>", desc = "Launch Terminal" },
 
-        ["H"] = { function() require("astrocore.buffer").nav(-1) end, desc = "Previous buffer" },
-        ["L"] = { function() require("astrocore.buffer").nav(1) end, desc = "Next buffer" },
+        ["<leader>lT"] = { "<cmd>LspRestart<cr>", desc = "Restart LSP" },
+
         ["<leader>fg"] = { function() require("utils").show_filepath() end, desc = "Show filepath" },
+
         ["<C-s>"] = { "<cmd>wa<cr>", desc = "Write all buffers" },
         ["<C-q>"] = { "<cmd>qa<cr>", desc = "Quit all windows" },
-
+        ["H"] = { function() require("astrocore.buffer").nav(-1) end, desc = "Previous buffer" },
+        ["L"] = { function() require("astrocore.buffer").nav(1) end, desc = "Next buffer" },
         ["<A-l>"] = { "<cmd>tabnext<cr>", desc = "Next tab page" },
         ["<A-h>"] = { "<cmd>tabprevious<cr>", desc = "Previous tab page" },
+
         ["<leader>T"] = { "<cmd>TodoTelescope<cr>", desc = "Todo" },
         ["<leader>s"] = { "<cmd>TroubleToggle<cr>", desc = "Toggle Trouble" },
         ["<leader>h"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "ToggleTerm float" },
-
-        ["<leader>lT"] = { "<cmd>LspRestart<cr>", desc = "Restart LSP" },
+        ["<leader>j"] = { function() require("flash").jump() end, desc = "Jump To" },
+        ["<leader>v"] = { "<cmd>Telescope projects<cr>", desc = "Projects" },
+        ["<leader>r"] = { "<cmd>e!<cr>", desc = "Restore Buffer" },
         ["<leader>D"] = { "<cmd>ErrorLensTelescope<cr>", desc = "Error Lens" },
       },
       t = {},
